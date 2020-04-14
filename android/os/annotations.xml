@@ -1,0 +1,10 @@
+<root>
+    <item name='android.os.AsyncTask void onPostExecute(Result)'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+    <item name='android.os.AsyncTask void onPreExecute()'>
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val name="pure" val="true" />
+        </annotation>
+    </item>
+</root>
