@@ -14,7 +14,6 @@ import java.util.concurrent.Executors;
 
 
 @Database(entities = {Sport.class}, version = 1, exportSchema = false)
-@TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
     abstract SportDao sportDao();

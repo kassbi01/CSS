@@ -5,12 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
-//import java.util.Date;
 
-import java.util.Date;
-
-import static com.example.css.Converters.dateToTimestamp;
-import static com.example.css.Converters.fromTimestamp;
 
 
 @Entity(tableName = "diary_table")

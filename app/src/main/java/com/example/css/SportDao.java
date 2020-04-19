@@ -12,8 +12,8 @@ import java.util.List;
 
 @Dao
 public interface SportDao {
-    @Query("SELECT * from diary_table ORDER BY eventId ASC")
-    LiveData<List<Sport>> getSport();
+//    @Query("SELECT * from diary_table ORDER BY eventId ASC")
+//    LiveData<List<Sport>> getSport();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertSport(Sport sport);
@@ -33,6 +33,4 @@ public interface SportDao {
     @Update
     void updateSport(Sport sport);
 
-    @Query("SELECT * FROM diary_table WHERE date BETWEEN :from AND :to")
-    List<Sport> findDates(Date from, Date to);
 }

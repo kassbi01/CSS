@@ -20,7 +20,6 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportHolder>
 
         private SportHolder(@NonNull View itemView) {
             super(itemView);
-
             textViewName = itemView.findViewById(R.id.name);
             textViewTime = itemView.findViewById(R.id.time);
             textViewLocation = itemView.findViewById(R.id.location);
@@ -28,13 +27,10 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportHolder>
     }
 
     private final LayoutInflater mInflater;
-
     private List<Sport> sports;
-
     SportAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
     }
-
 
     @Override
     public SportHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -42,17 +38,14 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportHolder>
         return new SportHolder(itemView);
     }
 
-
     @Override
     public void onBindViewHolder(SportHolder holder, int position) {
         if (sports != null) {
             Sport currentSport = sports.get(position);
-
             holder.textViewId.setText(currentSport.getEventId());
             holder.textViewName.setText(currentSport.getEventName());
             holder.textViewTime.setText(currentSport.getDate());
             holder.textViewLocation.setText(String.valueOf(currentSport.getEventLocation()));
-
         } else {
             holder.textViewName.setText("No sport");
             holder.textViewTime.setText("No sport");

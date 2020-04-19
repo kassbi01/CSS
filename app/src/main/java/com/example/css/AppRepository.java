@@ -17,15 +17,12 @@ import java.util.List;
 
 public class AppRepository {
     private SportDao dao;
-    private String htmlContentInStringFormat;
-    String url;
-
     private LiveData<List<Sport>> allSports;
 
     public AppRepository(Application application) {
         AppDatabase database = AppDatabase.getDatabase(application);
         dao = database.sportDao();
-        allSports = dao.getSport();
+        allSports = dao.getAllSports();
     }
 
     public void insert(Sport sports) {
@@ -121,7 +118,7 @@ public class AppRepository {
     }
 
 
-    private static class PopulateDBAsyncTask extends AsyncTask<String, Void, Void> {
+    private static class PopulateDBAsyncTask extends AsyncTask<Void, Void, Void> {
         private SportDao myDao;
         String url;
 
@@ -131,39 +128,22 @@ public class AppRepository {
         }
 
         @Override
-        protected Void doInBackground(String... params) {
-
-            String url = params[0];
-            ///ArticleModel articleModel = null;
-
-            ArrayList<String> eventNames = new ArrayList<String>();
-            ArrayList<String> eventDates = new ArrayList<String>();
-            ArrayList<String> eventLocations = new ArrayList<String>();
-
-
-            ArrayList<Sport> sports = new ArrayList<Sport>();
-
-            String name;
-            String time;
-            String location;
-
-
-            Document pageDocument;
-            Elements element1;
-            Elements element2;
-            Elements element3;
-
-
+        protected Void doInBackground(Void... params) {
             try {
+                Document pageDocument;
                 pageDocument = Jsoup.connect(url).get();
 
-                //elements = pageDocument.select("#body-content");
-                //articleElements = pageDocument.select(".wrap .cols .col-1of2 p");
+                ArrayList<String> eventNames = new ArrayList<String>();
+                ArrayList<String> eventDates = new ArrayList<String>();
+                ArrayList<String> eventLocations = new ArrayList<String>();
+
+                Elements element1;
+                Elements element2;
+                Elements element3;
 
                 element1 = pageDocument.select("div.title");
                 element2 = pageDocument.select("div.time");
                 element3 = pageDocument.select("div.location");
-
 
                 //find all the titles
                 for(Element element: element1) {
@@ -180,22 +160,14 @@ public class AppRepository {
                     eventLocations.add(element.text());
                 }
 
-                //ArrayList<Sport> listSports = new ArrayList<Sport>();
-
-
                 Sport sport = new Sport();
                 for (int i = 0; i < eventNames.size(); i ++) {
-                    name = eventNames.get(i);
-                    time = eventDates.get(i);
-                    location = eventLocations.get(i);
-
-                    sport.setEventName(name);
-                    sport.setDate(time);
-                    sport.setEventLocation(location);
+                    sport.setEventName(eventNames.get(i));
+                    sport.setDate(eventDates.get(i));
+                    sport.setEventLocation(eventLocations.get(i));
 
                     myDao.insertSport(sport);
                 }
-
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -203,6 +175,7 @@ public class AppRepository {
 
             return null;
         }
+
     }
 }
 

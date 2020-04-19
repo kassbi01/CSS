@@ -73,6 +73,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.io.IOException;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
     private AppViewModel appViewModel;
     private Context context;
     TextView texx;
+    String url;
 
     private EditText editTextName;
     private EditText editTextDate;
@@ -100,67 +103,62 @@ public class MainActivity extends AppCompatActivity {
         // Get a new or existing ViewModel from the ViewModelProvider.
         appViewModel = new ViewModelProvider(this).get(AppViewModel.class);
 
+//        appViewModel.populateDB(url);
+
+        TextView name;
+        TextView date;
+        TextView location;
+
+        name = (TextView) findViewById(R.id.title);
+        date = (TextView) findViewById(R.id.date);
+        location = (TextView) findViewById(R.id.location);
+
         // Add an observer on the LiveData returned.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
         appViewModel.getAllSports().observe(this, new Observer<List<Sport>>() {
             @Override
             public void onChanged(@Nullable final List<Sport> sports) {
-                // Update the cached copy of the words in the adapter.
                 adapter.setSport(sports);
             }
         });
 
-//        FloatingActionButton ButtonAddSport = findViewById(R.id.fab);
-//        ButtonAddSport.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, AddSport.class);
-//                startActivityForResult(intent, ADD_SPORT_REQUEST);
-//            }
-//        });
 
-        String url;
-        String Name;
-        String Time;
-        String location;
-
-        FloatingActionButton buttonAdd = findViewById(R.id.fab);
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton ButtonAddSport = findViewById(R.id.fab);
+        ButtonAddSport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                //appViewModel.populateDB(url);
+                Intent intent = new Intent(MainActivity.this, AddSport.class);
+                startActivityForResult(intent, ADD_SPORT_REQUEST);
             }
         });
-
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        //appViewModel = new ViewModelProvider(this).get(AppViewModel.class);
-//        if(requestCode == ADD_SPORT_REQUEST && resultCode == RESULT_OK) {
-//            //I am working on the main activity on the video Room 7, 22:02
-//            //Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
-//
-//            Sport sports = new Sport();
-//
-//            String name = data.getStringExtra(AddSport.Extra_Date);
-//            String time = data.getStringExtra(AddSport.Extra_Month);
-//            String location = data.getStringExtra(AddSport.Extra_Year);
-//
-//            sports.setSport(name, time, location);
-//            appViewModel.insert(sports);
-//            Toast.makeText(this, "Sport Saved", Toast.LENGTH_SHORT).show();
-//
-//        } else {
-//            Toast.makeText(
-//                    getApplicationContext(),
-//                    "sport not saved",
-//                    Toast.LENGTH_LONG).show();
-//        }
-//    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //appViewModel = new ViewModelProvider(this).get(AppViewModel.class);
+        if(requestCode == ADD_SPORT_REQUEST && resultCode == RESULT_OK) {
+            //I am working on the main activity on the video Room 7, 22:02
+            //Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
+
+            Sport sports = new Sport();
+
+            String name = data.getStringExtra(AddSport.Extra_Date);
+            String time = data.getStringExtra(AddSport.Extra_Month);
+            String location = data.getStringExtra(AddSport.Extra_Year);
+
+            sports.setSport(name, time, location);
+            appViewModel.insert(sports);
+            Toast.makeText(this, "Sport Saved", Toast.LENGTH_SHORT).show();
+
+        } else {
+            Toast.makeText(
+                    getApplicationContext(),
+                    "sport not saved",
+                    Toast.LENGTH_LONG).show();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -181,32 +179,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    private class PopulateAsncTask extends AsyncTask<Void, Void, Void> {
-//        String eventName;
-//        String title;
-//
-//        @Override
-//        protected Void doInBackground(Void... voids) {
-//            try{
-//            Document htmlDocument = Jsoup.connect("https://www.luther.edu/events/?category=455731&no_search=1").get();
-//
-//            title = htmlDocument.title();
-//
-//            Elements eventName = htmlDocument.getElementsByClass("title");
-//            Elements time = htmlDocument.getElementsByClass("time");
-//            Elements locatiom = htmlDocument.getElementsByClass("location");
-//
-//            } catch(Exception e){e.printStackTrace();}
-//
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Void aVoid) {
-//            super.onPostExecute(aVoid);
-//            texx.setText(title);
-//        }
-//    }
-}
+    }
+
 
 
