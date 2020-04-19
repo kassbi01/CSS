@@ -1,57 +1,4 @@
-//package com.example.css;
-//
-//import android.annotation.SuppressLint;
-//import android.os.Bundle;
-//import android.view.View;
-//import android.widget.ProgressBar;
-//import android.widget.TextView;
-//
-//import androidx.appcompat.app.AppCompatActivity;
-//
-//
-//
-//public class MainActivity extends AppCompatActivity implements ParserResponseInterface{
-//
-//    private TextView headlineTextView;
-//    private TextView articleTextView;
-//    private TextView errorMessageTextView;
-//    private ProgressBar progressBar;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        headlineTextView = (TextView) findViewById(R.id.headline);
-//        articleTextView = (TextView) findViewById(R.id.article);
-//        errorMessageTextView = (TextView) findViewById(R.id.errorMessage);
-//        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-//
-//
-//        //Execute AsyncTask for Parsing HTML
-//        new HtmlParser(this).execute("https://developer.android.com/training/index.html");
-//
-//    }
-//
-//
-//    //@SuppressLint("SetTextI18n")
-//    @Override
-//    public void onParsingDone(ArticleModel articleModel) {
-//
-//        progressBar.setVisibility(View.GONE);
-//
-//        if(articleModel!=null){
-//            headlineTextView.setText(articleModel.getHeadline());
-//            articleTextView.setText(articleModel.getArticle());
-//        }
-//        else
-//            errorMessageTextView.setText("Something wrong! Can't parse HTML");
-//    }
-//
-//}
-
 package com.example.css;
-
 
 import android.content.Context;
 import android.content.Intent;
@@ -94,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recyclerView = findViewById(R.id.recycle_view);
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
         final SportAdapter adapter = new SportAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

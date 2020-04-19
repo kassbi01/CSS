@@ -12,7 +12,6 @@ import java.util.List;
 public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportHolder> {
 
     class SportHolder extends RecyclerView.ViewHolder {
-        private TextView textViewId;
         private TextView textViewName;
         private TextView textViewTime;
         private TextView textViewLocation;
@@ -42,7 +41,7 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportHolder>
     public void onBindViewHolder(SportHolder holder, int position) {
         if (sports != null) {
             Sport currentSport = sports.get(position);
-            holder.textViewId.setText(currentSport.getEventId());
+//            holder.textViewId.setText(currentSport.getEventId());
             holder.textViewName.setText(currentSport.getEventName());
             holder.textViewTime.setText(currentSport.getDate());
             holder.textViewLocation.setText(String.valueOf(currentSport.getEventLocation()));
