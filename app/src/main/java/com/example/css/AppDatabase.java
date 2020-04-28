@@ -66,15 +66,15 @@ public abstract class AppDatabase extends RoomDatabase {
                 dao.insertSport(sport1);
 
                 Sport sportd1 = new Sport();
-                sport1.setSport("Dance Performance: 2020 Dance", "May 7 2020", "Center for the Arts, Jewel theatre");
+                sportd1.setSport("Dance Performance: 2020 Dance", "May 7 2020", "Center for the Arts, Jewel theatre");
                 dao.insertSport(sportd1);
 
                 Sport sportd2 = new Sport();
-                sport1.setSport("Dance Performance: 2020 Dance", "May 8 2020", "Center for the Arts, Jewel theatre");
+                sportd2.setSport("Dance Performance: 2020 Dance", "May 8 2020", "Center for the Arts, Jewel theatre");
                 dao.insertSport(sportd2);
 
                 Sport sportd3 = new Sport();
-                sport1.setSport("Dance Performance: 2020 Dance", "May 9 2020", "Center for the Arts, Jewel theatre");
+                sportd3.setSport("Dance Performance: 2020 Dance", "May 9 2020", "Center for the Arts, Jewel theatre");
                 dao.insertSport(sportd3);
 
                 Sport sportd4 = new Sport();
