@@ -40,7 +40,7 @@ public class AddSport extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_sport);
+        setContentView(R.layout.add_sport_activity);
 
         editTextName = findViewById(R.id.name);
         editTextTime = findViewById(R.id.time);

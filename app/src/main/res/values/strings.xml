@@ -22,4 +22,6 @@
     <string name="name">name</string>
     <string name="time">time</string>
     <string name="location">location</string>
+    <string name="year">year</string>
+    <string name="title">Title</string>
 </resources>
