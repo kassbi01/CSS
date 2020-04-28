@@ -29,12 +29,6 @@ public class MainActivity extends AppCompatActivity {
     public static final int ADD_SPORT_REQUEST = 1;
     private AppViewModel appViewModel;
     private Context context;
-    TextView texx;
-    String url;
-
-    private EditText editTextName;
-    private EditText editTextDate;
-    private EditText editTextLocation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,16 +44,6 @@ public class MainActivity extends AppCompatActivity {
         // Get a new or existing ViewModel from the ViewModelProvider.
         appViewModel = new ViewModelProvider(this).get(AppViewModel.class);
 
-//        appViewModel.populateDB(url);
-
-        TextView name;
-        TextView date;
-        TextView location;
-
-        name = (TextView) findViewById(R.id.title);
-        date = (TextView) findViewById(R.id.date);
-        location = (TextView) findViewById(R.id.location);
-
         // Add an observer on the LiveData returned.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
@@ -69,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 adapter.setSport(sports);
             }
         });
-
 
         FloatingActionButton ButtonAddSport = findViewById(R.id.fab);
         ButtonAddSport.setOnClickListener(new View.OnClickListener() {
@@ -86,11 +69,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         //appViewModel = new ViewModelProvider(this).get(AppViewModel.class);
         if(requestCode == ADD_SPORT_REQUEST && resultCode == RESULT_OK) {
-            //I am working on the main activity on the video Room 7, 22:02
-            //Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
-
             Sport sports = new Sport();
-
             String name = data.getStringExtra(AddSport.Extra_Date);
             String time = data.getStringExtra(AddSport.Extra_Month);
             String location = data.getStringExtra(AddSport.Extra_Year);
@@ -126,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    }
+}
 
 
 

@@ -19,13 +19,8 @@ public class Sport
 
     private String date;
 
-//    private String month;
-//
-//    private String year;
-
     private String eventLocation;
 
-//    private String eventStatus;
 
     public void setSport(String eventName, String date, String eventLocation) {
         this.eventName = eventName;

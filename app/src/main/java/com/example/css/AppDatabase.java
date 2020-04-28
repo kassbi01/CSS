@@ -62,10 +62,25 @@ public abstract class AppDatabase extends RoomDatabase {
                 dao.deleteAll();
 
                 Sport sport = new Sport();
-                sport.setDate("11/12/13");
-                sport.setSport("Luther Vs Loras", "11/12/12", "somewhere");
-
+                sport.setSport("CANCELED: Tedx", "Apr 25 202", "Center for Faith and Life, Recital Hall");
                 dao.insertSport(sport);
+
+                Sport sport1 = new Sport();
+                sport1.setSport("CANCELED: Biology Colloquium", "Apr 30 202", "Valders Hall of Science, Room 206");
+                dao.insertSport(sport1);
+
+                Sport sport2 = new Sport();
+                sport2.setSport("CANCELED: J-Term 2021 Off-Campus Programs \"Meet & Greet\"", "May 10 202", "Valders Hall of Science, Room 206");
+                dao.insertSport(sport2);
+
+                Sport sport3 = new Sport();
+                sport3.setSport("Music Senior Project Showcase", "May 12 202", "Noble Recital Hall, Choir Room, Room 123: Jenson-Noble Hall of Music");
+                dao.insertSport(sport3);
+
+                Sport sport4 = new Sport();
+                sport4.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 202", "Shirley Baker Commons");
+                dao.insertSport(sport4);
+
             });
         }
     };

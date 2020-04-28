@@ -47,9 +47,6 @@ public class AddSport extends AppCompatActivity {
         editTextLocation = findViewById(R.id.location);
 
 
-//        Objects.requireNonNull(getSupportActionBar()).setHomeAsUpIndicator(R.drawable.ic_close);
-//        setTitle("Add Sport");
-
         final Button button = findViewById(R.id.button_save);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

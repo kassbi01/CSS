@@ -19,6 +19,7 @@ public class AppRepository {
     private SportDao dao;
     private LiveData<List<Sport>> allSports;
 
+
     public AppRepository(Application application) {
         AppDatabase database = AppDatabase.getDatabase(application);
         dao = database.sportDao();
@@ -33,6 +34,7 @@ public class AppRepository {
     }
 
     public void populateDB(String url) {
+        url =  "https://www.luther.edu/events/?category=455731&no_search=1";
         PopulateDBAsyncTask task = new PopulateDBAsyncTask(dao, url);
         task.execute();
     }
