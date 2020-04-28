@@ -61,24 +61,36 @@ public abstract class AppDatabase extends RoomDatabase {
                 SportDao dao = INSTANCE.sportDao();
                 dao.deleteAll();
 
-                Sport sport = new Sport();
-                sport.setSport("CANCELED: Tedx", "Apr 25 202", "Center for Faith and Life, Recital Hall");
-                dao.insertSport(sport);
-
                 Sport sport1 = new Sport();
-                sport1.setSport("CANCELED: Biology Colloquium", "Apr 30 202", "Valders Hall of Science, Room 206");
+                sport1.setSport("CANCELED: Biology Colloquium", "Apr 30 2020", "Valders Hall of Science, Room 206");
                 dao.insertSport(sport1);
 
+                Sport sportd1 = new Sport();
+                sport1.setSport("Dance Performance: 2020 Dance", "May 7 2020", "Center for the Arts, Jewel theatre");
+                dao.insertSport(sportd1);
+
+                Sport sportd2 = new Sport();
+                sport1.setSport("Dance Performance: 2020 Dance", "May 8 2020", "Center for the Arts, Jewel theatre");
+                dao.insertSport(sportd2);
+
+                Sport sportd3 = new Sport();
+                sport1.setSport("Dance Performance: 2020 Dance", "May 9 2020", "Center for the Arts, Jewel theatre");
+                dao.insertSport(sportd3);
+
+                Sport sportd4 = new Sport();
+                sport1.setSport("Theatre Performance: Musical Theatre Cabaret Concert", "May 10 2020", "Center for the Arts, Jewel theatre");
+                dao.insertSport(sportd4);
+
                 Sport sport2 = new Sport();
-                sport2.setSport("CANCELED: J-Term 2021 Off-Campus Programs \"Meet & Greet\"", "May 10 202", "Valders Hall of Science, Room 206");
+                sport2.setSport("CANCELED: J-Term 2021 Off-Campus Programs \"Meet & Greet\"", "May 10 2020", "Valders Hall of Science, Room 206");
                 dao.insertSport(sport2);
 
                 Sport sport3 = new Sport();
-                sport3.setSport("Music Senior Project Showcase", "May 12 202", "Noble Recital Hall, Choir Room, Room 123: Jenson-Noble Hall of Music");
+                sport3.setSport("Music Senior Project Showcase", "May 12 2020", "Noble Recital Hall, Choir Room, Room 123: Jenson-Noble Hall of Music");
                 dao.insertSport(sport3);
 
                 Sport sport4 = new Sport();
-                sport4.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 202", "Shirley Baker Commons");
+                sport4.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 2020", "Shirley Baker Commons");
                 dao.insertSport(sport4);
 
             });
