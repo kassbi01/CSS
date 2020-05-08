@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
             sports.setSport(name, time, location);
             appViewModel.insert(sports);
-            Toast.makeText(this, "Sport Saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Event Saved", Toast.LENGTH_SHORT).show();
 
         } else {
             Toast.makeText(
