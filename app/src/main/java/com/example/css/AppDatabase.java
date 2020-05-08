@@ -61,25 +61,33 @@ public abstract class AppDatabase extends RoomDatabase {
                 SportDao dao = INSTANCE.sportDao();
                 dao.deleteAll();
 
-                Sport sport1 = new Sport();
-                sport1.setSport("CANCELED: Biology Colloquium", "Apr 30 2020", "Valders Hall of Science, Room 206");
-                dao.insertSport(sport1);
+                Sport sportd2 = new Sport();
+                sportd2 .setSport("Dance Performance: 2020 Dance", "May 8 2020", "Center for the Arts, Jewel theatre");
+                dao.insertSport(sportd2);
+
+                Sport sport26 = new Sport();
+                sport26.setSport("CANCELLED: Legacy Trust Scholarship Recognition Event", "May 9 2020", "Peace Dining Room");
+                dao.insertSport(sport26);
 
                 Sport sportd1 = new Sport();
-                sportd1.setSport("Dance Performance: 2020 Dance", "May 7 2020", "Center for the Arts, Jewel theatre");
+                sportd1.setSport("Dance Performance: 2020 Dance", "May 9 2020", "Center for the Arts, Jewel theatre");
                 dao.insertSport(sportd1);
-
-                Sport sportd2 = new Sport();
-                sportd2.setSport("Dance Performance: 2020 Dance", "May 8 2020", "Center for the Arts, Jewel theatre");
-                dao.insertSport(sportd2);
 
                 Sport sportd3 = new Sport();
                 sportd3.setSport("Dance Performance: 2020 Dance", "May 9 2020", "Center for the Arts, Jewel theatre");
                 dao.insertSport(sportd3);
 
-                Sport sportd4 = new Sport();
-                sport1.setSport("Theatre Performance: Musical Theatre Cabaret Concert", "May 10 2020", "Center for the Arts, Jewel theatre");
-                dao.insertSport(sportd4);
+                Sport sportd43 = new Sport();
+                sportd43.setSport("CANCELLED: President's Council Recognition Dinner", "May 9 2020", "Peace Dining Room");
+                dao.insertSport(sportd43);
+
+                Sport sport6 = new Sport();
+                sport6.setSport("CANCELLED: Legacy Trust Scholarship Recognition Event", "May 9 2020", "Peace Dining Room");
+                dao.insertSport(sport6);
+
+                Sport sport7 = new Sport();
+                sport7.setSport("CANCELLED: Legacy Trust Scholarship Recognition Event", "May 9 2020", "Peace Dining Room");
+                dao.insertSport(sport7);
 
                 Sport sport2 = new Sport();
                 sport2.setSport("CANCELED: J-Term 2021 Off-Campus Programs \"Meet & Greet\"", "May 10 2020", "Valders Hall of Science, Room 206");
@@ -92,6 +100,48 @@ public abstract class AppDatabase extends RoomDatabase {
                 Sport sport4 = new Sport();
                 sport4.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 2020", "Shirley Baker Commons");
                 dao.insertSport(sport4);
+
+                Sport sport5 = new Sport();
+                sport5.setSport("CANCELED: Senior Send-Off", "May 21 2020", "Dahl Centennial Union, Dining Hall");
+                dao.insertSport(sport5);
+
+
+
+//                Sport sport8 = new Sport();
+//                sport8.setSport("CANCELED: J-Term 2021 Off-Campus Programs \"Meet & Greet\"", "May 10 2020", "Valders Hall of Science, Room 206\n");
+//                dao.insertSport(sport8);
+//
+//
+//                Sport sport10 = new Sport();
+//                sport10.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 2020", "Shirley Baker Commons");
+//                dao.insertSport(sport10);
+
+//                Sport sport11 = new Sport();
+//                sport11.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 2020", "Shirley Baker Commons");
+//                dao.insertSport(sport11);
+//
+//                Sport sport12 = new Sport();
+//                sport12.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 2020", "Shirley Baker Commons");
+//                dao.insertSport(sport12);
+//
+//                Sport sport13 = new Sport();
+//                sport13.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 2020", "Shirley Baker Commons");
+//                dao.insertSport(sport13);
+//
+//                Sport sport14 = new Sport();
+//                sport14.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 2020", "Shirley Baker Commons");
+//                dao.insertSport(sport14);
+//
+//                Sport sport15 = new Sport();
+//                sport15.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 2020", "Shirley Baker Commons");
+//                dao.insertSport(sport15);
+//
+//                Sport sport16 = new Sport();
+//                sport16.setSport("Emeriti Colloquium: Jodi Enos-Berlage: \"What's new in biological research at Luther\"", "May 14 2020", "Shirley Baker Commons");
+//                dao.insertSport(sport16);
+
+
+
 
             });
         }

@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(
                     getApplicationContext(),
-                    "sport not saved",
+                    "Event not saved",
                     Toast.LENGTH_LONG).show();
         }
     }

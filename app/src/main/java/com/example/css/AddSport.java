@@ -58,7 +58,11 @@ public class AddSport extends AppCompatActivity {
                 String Location = editTextLocation.getText().toString();
 
                 if (Name.trim().isEmpty() || Time.trim().isEmpty() || Location.trim().isEmpty()) {
-                    //Toast.makeText(this, "please enter the field properly", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this, "please enter the field properly", Toast.LENGTH_LONG).show();
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "Please enter the field properly",
+                            Toast.LENGTH_LONG).show();
                     setResult(RESULT_CANCELED, data);
                     return;
                 } else {
@@ -77,9 +81,7 @@ public class AddSport extends AppCompatActivity {
 
     }
 
-    //void SaveSport(String hello) {
 
-    //}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -93,7 +95,7 @@ public class AddSport extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.item3:
                 //SaveSport();
-                Toast.makeText(this, "Sport Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sport Not Saved", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

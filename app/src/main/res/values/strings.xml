@@ -24,4 +24,7 @@
     <string name="location">location</string>
     <string name="year">year</string>
     <string name="title">Title</string>
+    <string name="CSS" />
+    <string name="back">Back</string>
+    <string name="date">Date and Time</string>
 </resources>

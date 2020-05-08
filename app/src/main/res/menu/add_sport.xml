@@ -9,10 +9,10 @@
 <!--            app:showAsAction="ifRoom"/>-->
 
 
-    <item
-        android:id="@+id/item1"
-        android:title="Back"
-        app:showAsAction="ifRoom"/>
+<!--    <item-->
+<!--        android:id="@+id/item1"-->
+<!--        android:title="@string/back"-->
+<!--        app:showAsAction="ifRoom"/>-->
 
     <item
         android:id="@+id/item3"
