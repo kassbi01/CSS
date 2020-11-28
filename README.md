@@ -16,6 +16,4 @@ then there is a plus button on the fron page that requires a necessary informati
 add a new schdual but then they can simply go back to the main activity which will show that "event is not saved" other wise they can add 
 a new event. and users can log out from their accound when done using the application, which found on option button in all activities.
 
-License:
-This application is made for school project, and all rights are reserved to the developer. 
 
